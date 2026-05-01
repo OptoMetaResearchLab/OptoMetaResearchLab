@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Danveer Singh</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Danveer Singh</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <p class="header-eyebrow">Lab Life @ IIT Ropar</p>
+  <h1>Gallery</h1>
+  <p class="subtitle">Moments from the lab — student milestones, group celebrations, and memories that mark our journey together.</p>
+</header>
+
+<main>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all', this)">All <span class="count">5</span></button>
+    <button class="filter-btn" onclick="filter('students', this)">Students <span class="count">2</span></button>
+    <button class="filter-btn" onclick="filter('events', this)">Events <span class="count">3</span></button>
+  </div>
+
+  <section class="gallery-section" data-section="students">
+    <div class="section-label"><h2>Student Milestones</h2></div>
+    <div class="photo-grid wide">
+
+      <div class="photo-card featured" data-cat="students"
+           onclick="openLightbox(this)"
+           data-caption="Last class, endless memories — so proud of these future innovators! #BTech2025"
+           data-src="https://lh3.googleusercontent.com/sitesv/AA5AbUC68K7ZW-MInw6Jk5TFe0ztpc-Zt-mPouVBxX_Hw4Znof1Z4ilVW2SOI1YNIfX_PdbSC-WO4yHepq3YdXXGFPcu-xUxwrO95_0uthjZ_y5wzhkz77mGChEApb2VpdrNoAUmTaujSQ7duXNwUaJ4yETRjy_-R4slSOWOl3oLgKfcHZpgP2Ti_sk2Ezan2hbo-3v_TBsvSEu9cpe-Qw6YOsSnm4OYXM4H-fMp=w1280">
+        <div class="photo-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUC68K7ZW-MInw6Jk5TFe0ztpc-Zt-mPouVBxX_Hw4Znof1Z4ilVW2SOI1YNIfX_PdbSC-WO4yHepq3YdXXGFPcu-xUxwrO95_0uthjZ_y5wzhkz77mGChEApb2VpdrNoAUmTaujSQ7duXNwUaJ4yETRjy_-R4slSOWOl3oLgKfcHZpgP2Ti_sk2Ezan2hbo-3v_TBsvSEu9cpe-Qw6YOsSnm4OYXM4H-fMp=w1280" alt="BTech 2025 last class" loading="lazy">
+          <div class="photo-overlay"><span class="overlay-text">Click to enlarge</span></div>
+        </div>
+        <div class="photo-caption">
+          <p class="caption-text">Last class, endless memories. So proud of these future innovators!</p>
+          <div class="caption-meta">
+            <span class="caption-tag">BTech 2025</span>
+            <span class="caption-year">2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card" data-cat="students"
+           onclick="openLightbox(this)"
+           data-caption="First PhD and MSc students — 2025"
+           data-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCCebCrmIXk24YMMPjk7VhQnik-Sh1BU5YpPkC-mYyaJvyzzE3kCFNMEtW2Bc94tfAsEtO5nXZWArQHlSDDHsq0AygCeA1YT8F-j3G0OvpBzvP75jlQzCGrXPkrhHy-tmEh_efOxEGIgJrqQV09HqyIIaoIaCr1qjfncfksYgvj-SSB-ya0NTUo1gNMpAlW2nLv08q0Aii5B8gf-D2Yeg36hSLHqMSyr0acyRA=w1280">
+        <div class="photo-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCCebCrmIXk24YMMPjk7VhQnik-Sh1BU5YpPkC-mYyaJvyzzE3kCFNMEtW2Bc94tfAsEtO5nXZWArQHlSDDHsq0AygCeA1YT8F-j3G0OvpBzvP75jlQzCGrXPkrhHy-tmEh_efOxEGIgJrqQV09HqyIIaoIaCr1qjfncfksYgvj-SSB-ya0NTUo1gNMpAlW2nLv08q0Aii5B8gf-D2Yeg36hSLHqMSyr0acyRA=w1280" alt="First PhD and MSc students" loading="lazy">
+          <div class="photo-overlay"><span class="overlay-text">Click to enlarge</span></div>
+        </div>
+        <div class="photo-caption">
+          <p class="caption-text">First PhD and MSc students</p>
+          <div class="caption-meta">
+            <span class="caption-tag">Research Group</span>
+            <span class="caption-year">2025</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="gallery-section" data-section="events">
+    <div class="section-label"><h2>Lab Events</h2></div>
+    <div class="photo-grid">
+
+      <div class="photo-card" data-cat="events"
+           onclick="openLightbox(this)"
+           data-caption="Group dinner at Casa Vista — 2026"
+           data-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCWcg8UIE6HZsgFPyzbZFlZ9ix86yG6AtZvhPZbfGOWNMcmxDcE4ht_J5Bqb8zurTMjEVatnhG6_XB8lun51XOTU1XTCITuafXbbSjI2_WmYTrpokz5iHMsco-7XMRsCPe1mThEzOwSd6hMrv3mnsLV34A_UJaXYq4Zu7C4yu7379jAq8b28KHS0dT2fuOVtjIMVp6d8pOn3eo1RpwZ8WvTSfWZ__cv-zXr8R8=w1280">
+        <div class="photo-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCWcg8UIE6HZsgFPyzbZFlZ9ix86yG6AtZvhPZbfGOWNMcmxDcE4ht_J5Bqb8zurTMjEVatnhG6_XB8lun51XOTU1XTCITuafXbbSjI2_WmYTrpokz5iHMsco-7XMRsCPe1mThEzOwSd6hMrv3mnsLV34A_UJaXYq4Zu7C4yu7379jAq8b28KHS0dT2fuOVtjIMVp6d8pOn3eo1RpwZ8WvTSfWZ__cv-zXr8R8=w1280" alt="Group dinner Casa Vista" loading="lazy">
+          <div class="photo-overlay"><span class="overlay-text">Click to enlarge</span></div>
+        </div>
+        <div class="photo-caption">
+          <p class="caption-text">Group dinner at Casa Vista</p>
+          <div class="caption-meta">
+            <span class="caption-tag">Lab Dinner</span>
+            <span class="caption-year">2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card" data-cat="events"
+           onclick="openLightbox(this)"
+           data-caption="Group dinner at Casa Vista — 2026"
+           data-src="https://lh3.googleusercontent.com/sitesv/AA5AbUDZIjo9lLecLRHvebDrVQbAnBRmfAIU8aGfkbqmOUq2GuhtRXgY6atPEJue17F02X8BAB1Zue6IWILKNk5-T9r0j8OYKnBlF0qj4Vck8QXuqFOiaZ-Qk99eR4I_ymI1fKi8i_9jEAVBPFZmcJNhPJr0D7PMPTT0ujj6lSW3fK_vVhbTk_TKtRUxAUebk4O3YTsVFQEL4ETUas4-reNM6HnWbRPo2UolYiSR2qA=w1280">
+        <div class="photo-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDZIjo9lLecLRHvebDrVQbAnBRmfAIU8aGfkbqmOUq2GuhtRXgY6atPEJue17F02X8BAB1Zue6IWILKNk5-T9r0j8OYKnBlF0qj4Vck8QXuqFOiaZ-Qk99eR4I_ymI1fKi8i_9jEAVBPFZmcJNhPJr0D7PMPTT0ujj6lSW3fK_vVhbTk_TKtRUxAUebk4O3YTsVFQEL4ETUas4-reNM6HnWbRPo2UolYiSR2qA=w1280" alt="Group dinner Casa Vista" loading="lazy">
+          <div class="photo-overlay"><span class="overlay-text">Click to enlarge</span></div>
+        </div>
+        <div class="photo-caption">
+          <p class="caption-text">Group dinner at Casa Vista</p>
+          <div class="caption-meta">
+            <span class="caption-tag">Lab Dinner</span>
+            <span class="caption-year">2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card" data-cat="events"
+           onclick="openLightbox(this)"
+           data-caption="Lab gathering — Nanophotonics Group"
+           data-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAAJEg6qOjL3e1Ht1tsUOH9oFjFo30UUpJ8TNozyJQBmD6PS7lnw3jnMZRXGvqmkwm_rSJD_Od0sULduXr2gvWf-_9HFKv62wn1gmmlTyHRKe675xa6ili6XAkf7OAUd665xwcyK9Oip7yN9YaL9chX5byF9gYEX_nd6zpbvUaqvA6C3rwySdSjKQL0pAuWCCkgl0OsZwUbDksVMa1EQZxk74J5mkWgP4Uni1o=w1280">
+        <div class="photo-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAAJEg6qOjL3e1Ht1tsUOH9oFjFo30UUpJ8TNozyJQBmD6PS7lnw3jnMZRXGvqmkwm_rSJD_Od0sULduXr2gvWf-_9HFKv62wn1gmmlTyHRKe675xa6ili6XAkf7OAUd665xwcyK9Oip7yN9YaL9chX5byF9gYEX_nd6zpbvUaqvA6C3rwySdSjKQL0pAuWCCkgl0OsZwUbDksVMa1EQZxk74J5mkWgP4Uni1o=w1280" alt="Lab gathering" loading="lazy">
+          <div class="photo-overlay"><span class="overlay-text">Click to enlarge</span></div>
+        </div>
+        <div class="photo-caption">
+          <p class="caption-text">Lab gathering — Nanophotonics Group</p>
+          <div class="caption-meta">
+            <span class="caption-tag">Lab Event</span>
+            <span class="caption-year">2025</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lb-close" onclick="closeLightbox()">&times;</button>
+    <img id="lb-img" src="" alt="">
+    <p class="lightbox-caption" id="lb-caption"></p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Danveer Singh &nbsp;·&nbsp; IIT Ropar &nbsp;·&nbsp; Nanophotonics Lab
+</footer>
+
+<script>
+function openLightbox(card) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lb-img').src = card.dataset.src;
+  document.getElementById('lb-caption').textContent = card.dataset.caption;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+function filter(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+  document.querySelectorAll('.gallery-section').forEach(sec => {
+    const visible = sec.querySelectorAll('.photo-card:not([style*="display: none"])').length;
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
