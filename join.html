@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us — Danveer Singh</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Page-specific styles */
+  .join-hero {
+    background: var(--paper);
+    border-radius: 12px;
+    padding: 2.5rem 2.5rem;
+    border: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--gold);
+  }
+  .join-hero p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  .opportunity-card {
+    background: var(--paper);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.25rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+  .opportunity-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold);
+  }
+  .opportunity-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .opportunity-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 500;
+    margin: 0;
+  }
+  .status-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .status-open {
+    background: rgba(34, 139, 60, 0.12);
+    color: #1f6f3a;
+  }
+  .status-rolling {
+    background: var(--gold-soft);
+    color: #8a6820;
+  }
+  .opportunity-card p {
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+  .opportunity-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+  }
+  .opportunity-card ul li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-soft);
+    font-size: 0.93rem;
+    line-height: 1.6;
+  }
+  .opportunity-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .skill-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.35rem;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .skill-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+  }
+  .skill-card .skill-icon {
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .skill-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+  .skill-card p {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Application steps */
+  .step-list {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .step-list li {
+    counter-increment: step;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem 1.25rem 4rem;
+    margin-bottom: 0.85rem;
+    position: relative;
+    color: var(--text-soft);
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .step-list li strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+
+  /* Email template */
+  .email-template {
+    background: #1a1a2e;
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin: 1.25rem 0;
+    border-left: 4px solid var(--gold);
+    position: relative;
+  }
+  .email-template .field-label {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* FAQ */
+  .faq-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: var(--gold); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--navy);
+    font-size: 0.97rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: 300;
+    transition: transform 0.3s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p {
+    margin-top: 0.85rem;
+    color: var(--text-soft);
+    line-height: 1.65;
+    font-size: 0.92rem;
+  }
+
+  /* Big CTA */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    text-align: center;
+    margin: 3rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.15);
+  }
+  .cta-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-banner p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-banner .btn {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 700px) {
+    .join-hero { padding: 1.75rem; }
+    .opportunity-card { padding: 1.5rem 1.4rem; }
+    .step-list li { padding: 1.25rem 1.25rem 1.25rem 3.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Danveer Singh</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="join.html" class="active">Join Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <p class="header-eyebrow">Opportunities @ IIT Ropar</p>
+  <h1>Join Us</h1>
+  <p class="subtitle">We are actively recruiting curious, motivated researchers to push the boundaries of nanophotonics and meta-optics. Join us at IIT Ropar to shape the future of light at the nanoscale.</p>
+</header>
+
+<main>
+
+  <div class="join-hero">
+    <p>Our group thrives on curiosity, rigor, and collaboration. If you're passionate about understanding how light behaves at the nanoscale — and excited to engineer materials and devices that bend, focus, and shape it in new ways — we'd love to hear from you. Below you'll find the current openings and how to apply.</p>
+  </div>
+
+  <!-- OPPORTUNITIES -->
+  <div class="section-label"><h2>Current Openings</h2></div>
+
+  <div class="opportunity-card">
+    <div class="opportunity-header">
+      <h3>PhD Positions</h3>
+      <span class="status-badge status-open">● Actively Recruiting</span>
+    </div>
+    <p>We are accepting applications for <strong>fully-funded PhD positions</strong> through IIT Ropar's Department of Physics. Selected candidates will work on cutting-edge problems at the intersection of nanophotonics, plasmonics, and meta-optics.</p>
+    <ul>
+      <li><strong>Eligibility:</strong> MSc / MTech in Physics, Optics, Photonics, or closely related field</li>
+      <li><strong>Required:</strong> Valid score in GATE / JEST / CSIR-NET / equivalent national-level exam</li>
+      <li><strong>Funding:</strong> Standard MHRD / institute fellowship for selected Indian candidates</li>
+      <li><strong>International applicants:</strong> Welcome with their own funding (e.g., country-specific scholarships, government fellowships)</li>
+    </ul>
+  </div>
+
+  <div class="opportunity-card">
+    <div class="opportunity-header">
+      <h3>MSc / MTech Project Students</h3>
+      <span class="status-badge status-rolling">● Rolling Basis</span>
+    </div>
+    <p>Master's students at IIT Ropar can join the lab for thesis projects, semester research, or year-long collaborations. Projects span computational electromagnetics, nanofabrication, and advanced optical characterization.</p>
+    <ul>
+      <li>Hands-on training in modern nanophotonics research</li>
+      <li>Co-authorship opportunities on resulting publications</li>
+      <li>Pathway to PhD admission for outstanding candidates</li>
+    </ul>
+  </div>
+
+  <div class="opportunity-card">
+    <div class="opportunity-header">
+      <h3>Summer Interns &amp; Visiting Students</h3>
+      <span class="status-badge status-rolling">● Rolling Basis</span>
+    </div>
+    <p>We host motivated undergraduates and visiting students for short-term research stints (typically 2–3 months). Past interns have come from Indian and international institutions and contributed to ongoing projects in computational and experimental nanophotonics.</p>
+    <ul>
+      <li>Open to BSc / BTech students in physics, optics, or related fields</li>
+      <li>Apply 3–4 months before your intended start date</li>
+      <li>Possibility of extension based on progress and project fit</li>
+    </ul>
+  </div>
+
+  <div class="opportunity-card">
+    <div class="opportunity-header">
+      <h3>Postdocs &amp; Research Associates</h3>
+      <span class="status-badge status-rolling">● Always Open to Strong Candidates</span>
+    </div>
+    <p>Outstanding postdoctoral candidates with a strong publication record in nanophotonics, plasmonics, or related areas are encouraged to reach out. Funding may be available through institute schemes or external fellowships (e.g., DST INSPIRE Faculty, NPDF, Marie Curie).</p>
+  </div>
+
+  <!-- WHAT WE LOOK FOR -->
+  <div class="section-label"><h2>What We Look For</h2></div>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">◆</div>
+      <h4>Strong Foundations</h4>
+      <p>Solid grasp of electromagnetics, classical optics, and condensed matter physics.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">◆</div>
+      <h4>Curiosity</h4>
+      <p>An itch to understand how things work, and the persistence to chase the answer.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">◆</div>
+      <h4>Computational Skills</h4>
+      <p>Comfort with Python, MATLAB, or COMSOL is a plus — but trainable for the right candidate.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">◆</div>
+      <h4>Hands-on Mindset</h4>
+      <p>Willingness to do experimental work — alignment, fabrication, microscopy, characterization.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">◆</div>
+      <h4>Communication</h4>
+      <p>Ability to read papers critically, explain ideas clearly, and write scientific text.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">◆</div>
+      <h4>Team Spirit</h4>
+      <p>Research is collaborative. We value people who help others succeed.</p>
+    </div>
+  </div>
+
+  <!-- HOW TO APPLY -->
+  <div class="section-label"><h2>How to Apply</h2></div>
+
+  <ol class="step-list">
+    <li>
+      <strong>Read about our work</strong>
+      Spend some time on the <a href="research.html" style="color: var(--navy); border-bottom: 1px dotted var(--gold);">Research</a> and <a href="publications.html" style="color: var(--navy); border-bottom: 1px dotted var(--gold);">Publications</a> pages. A thoughtful application that connects to specific projects gets noticed.
+    </li>
+    <li>
+      <strong>Prepare your CV</strong>
+      Include your educational background, courses, projects, technical skills (lab + computational), and any publications or conference presentations.
+    </li>
+    <li>
+      <strong>Send an email</strong>
+      Email <a href="mailto:danveer.singh@iitrpr.ac.in" style="color: var(--navy); border-bottom: 1px dotted var(--gold);">danveer.singh@iitrpr.ac.in</a> with your CV attached and a brief note about why you're interested. See the suggested template below.
+    </li>
+    <li>
+      <strong>Wait for a response</strong>
+      We review every application carefully. If there's a potential fit, we'll invite you for a conversation. Please allow 1–2 weeks before following up.
+    </li>
+  </ol>
+
+  <!-- EMAIL TEMPLATE -->
+  <div class="section-label"><h2>Suggested Email Template</h2></div>
+  <p style="color: var(--text-soft); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1rem;">A clear, specific email is more likely to get a response than a generic one. Feel free to adapt the template below.</p>
+
+  <div class="email-template">
+    <span class="field-label">Subject:</span> PhD Application — [Your Name] — Background in [Your Field]<br><br>
+    Dear Dr. Singh,<br><br>
+    I am [Your Name], currently pursuing/completed [Degree] from [Institution]. I am writing to express my interest in joining your research group as a PhD student.<br><br>
+    I have been particularly interested in your work on [specific paper or topic, e.g., curved-space plasmonics or selenium Mie resonators]. My background in [your area] and experience with [specific skills/tools] aligns well with this direction.<br><br>
+    I have attached my CV for your review. I would be grateful for the opportunity to discuss potential research projects.<br><br>
+    Thank you for your time and consideration.<br><br>
+    Best regards,<br>
+    [Your Name]<br>
+    [Phone] | [Email]
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-label"><h2>Frequently Asked Questions</h2></div>
+
+  <details class="faq-item">
+    <summary>What's the application deadline for PhD admissions?</summary>
+    <p>IIT Ropar typically holds PhD admissions twice a year — Spring (December–January call) and Autumn (May–June call). Check the <a href="https://www.iitrpr.ac.in" target="_blank" style="color: var(--navy); border-bottom: 1px dotted var(--gold);">institute website</a> for current cycle dates. Reach out to me before applying so I can flag your application.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>I don't have a GATE / NET score yet. Can I still apply?</summary>
+    <p>For institute-funded PhD positions, a valid score in GATE, JEST, CSIR-NET, or equivalent is generally required. However, exceptional candidates with strong research backgrounds and publications may be considered through other routes (e.g., Prime Minister's Research Fellowship, project-based positions). Email me to discuss your specific situation.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>I'm an international student. How do I apply?</summary>
+    <p>International applicants are welcome, typically with their own funding (e.g., country-specific scholarships, government fellowships, or institutional sponsorships). Send me an email with your CV and proposed funding source so we can discuss feasibility.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Do you offer remote / part-time positions?</summary>
+    <p>Most positions require on-site presence at IIT Ropar because experimental work requires lab access. Theoretical/computational projects may have some flexibility — please discuss with me directly.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What's the typical PhD duration?</summary>
+    <p>Most PhD students complete the program in 4–5 years, including coursework, qualifying exams, research, and thesis writing.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>I'm a BSc / BTech student. Can I do a summer internship?</summary>
+    <p>Yes! We host 2–3 motivated undergraduate interns each summer. Apply 3–4 months in advance with your CV, transcripts, and a short statement of interest. We prioritize students who have completed at least one course in optics or electromagnetism.</p>
+  </details>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h3>Ready to apply?</h3>
+    <p>Send your CV and a brief note about your research interests.</p>
+    <a href="mailto:danveer.singh@iitrpr.ac.in?subject=Application%20—%20Joining%20the%20Lab" class="btn btn-primary">Email Dr. Singh →</a>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Danveer Singh &nbsp;·&nbsp; IIT Ropar &nbsp;·&nbsp; Nanophotonics Lab
+</footer>
+
+</body>
+</html>
