@@ -474,35 +474,38 @@ main {
   overflow: hidden;
   margin-bottom: 1.75rem;
   display: grid;
-  grid-template-columns: 480px 1fr;
+  grid-template-columns: 1fr 1fr;
   transition: box-shadow 0.3s;
+  align-items: stretch;
 }
 
 .research-item:hover { box-shadow: var(--shadow-md); }
 
-.research-item.reverse { grid-template-columns: 1fr 480px; }
+.research-item.reverse { grid-template-columns: 1fr 1fr; }
 
 .research-item .ri-image {
-  background: #f4f1eb;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
-  min-height: 340px;
+  padding: 1.25rem;
 }
 
 .research-item .ri-image img {
   max-width: 100%;
   max-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
 
 .research-item .ri-content {
-  padding: 1.75rem 1.85rem;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .research-item h3 {
