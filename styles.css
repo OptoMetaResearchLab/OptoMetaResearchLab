@@ -447,13 +447,13 @@ main {
   overflow: hidden;
   margin-bottom: 1.75rem;
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 480px 1fr;
   transition: box-shadow 0.3s;
 }
 
 .research-item:hover { box-shadow: var(--shadow-md); }
 
-.research-item.reverse { grid-template-columns: 1fr 360px; }
+.research-item.reverse { grid-template-columns: 1fr 480px; }
 
 .research-item .ri-image {
   background: #f4f1eb;
@@ -462,8 +462,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  min-height: 240px;
+  padding: 0.5rem;
+  min-height: 340px;
 }
 
 .research-item .ri-image img {
